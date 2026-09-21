@@ -1,0 +1,1 @@
+//ya crj ya estan los metodos jalate td jsjsjjs
