@@ -13,7 +13,7 @@ public class Curso {
         this.notas = new HashMap<>();
         this.alumnos = new ArrayList<>();
     }
-
+    
     public int getCódigo(){
         return código;
     }
@@ -64,5 +64,17 @@ public class Curso {
         }
         this.notas.put(alumno, registro);
         return registro;
+    }
+
+    public ArrayList<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public HashMap<Alumno, ArrayList<Double>> getNotas() {
+        return notas;
+    }
+
+    public Scanner getSc() {
+        return sc;
     }
 }
