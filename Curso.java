@@ -56,15 +56,22 @@ public class Curso {
     }
 
     public ArrayList<Double> registrarNotas(Alumno alumno, int cantidad){
-        ArrayList<Double> registro = new ArrayList<>();
-        for (int i=0; i<cantidad; i++) {
-            System.out.println("Ingresa la nota "+i);
-            double nota = sc.nextDouble();
-            registro.add(nota);
-        }
-        this.notas.put(alumno, registro);
-        return registro;
+    ArrayList<Double> registro = new ArrayList<>();
+    for (int i = 0; i < cantidad; i++) {
+        double nota;
+        do {
+            System.out.print("Ingresa la nota " + (i + 1) + " (0 - 20): ");
+            nota = sc.nextDouble();
+            if (nota < 0 || nota > 20) {
+                System.out.println(" Nota inválida. Debe estar entre 0 y 20.");
+            }
+        } while (nota < 0 || nota > 20); 
+        
+        registro.add(nota);
     }
+    this.notas.put(alumno, registro);
+    return registro;
+}
 
     public ArrayList<Alumno> getAlumnos() {
         return alumnos;
